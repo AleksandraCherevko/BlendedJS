@@ -74,3 +74,25 @@
 // }
 
 // checkSeason();
+
+// Завдання 4
+
+// Отримуйте від користувача число (кількість хвилин) через prompt
+// і виводьте у консоль рядок у форматі годин та хвилин.
+// Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
+// Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+
+function timeCheck() {
+  const inputValue = prompt("enter minutes");
+  const num = Number(inputValue);
+
+  const hours = Math.floor(num / 60);
+  const minutes = Math.floor(num / 60);
+
+  const formattedHours = String(hours).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");
+
+  console.log(`${formattedHours}:${formattedMinutes}`);
+}
+timeCheck();
