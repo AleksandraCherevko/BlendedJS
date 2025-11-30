@@ -114,27 +114,39 @@
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
-function userLoggin() {
-  const login = prompt("Enter your login");
+// function userLoggin() {
+//   const login = prompt("Enter your login");
 
-  if (login === null || login === "") {
-    alert("Скасовано");
-    return;
-  }
+//   if (login === null || login === "") {
+//     alert("Скасовано");
+//     return;
+//   }
 
-  if (login === "Адмін") {
-    const password = prompt("Enter your password");
+//   if (login === "Адмін") {
+//     const password = prompt("Enter your password");
 
-    if (password === null || password === "") {
-      alert("Скасовано");
-    } else if (password === "Я головний") {
-      console.log("Вітаю!");
-    } else {
-      alert("Невірний пароль");
-    }
-  } else {
-    alert("Я вас не знаю");
-  }
-}
+//     if (password === null || password === "") {
+//       alert("Скасовано");
+//     } else if (password === "Я головний") {
+//       console.log("Вітаю!");
+//     } else {
+//       alert("Невірний пароль");
+//     }
+//   } else {
+//     alert("Я вас не знаю");
+//   }
+// }
 
-userLoggin();
+// userLoggin();
+
+// Завдання 6
+
+// Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
+
+// let min = 0;
+// const max = 20;
+
+// while (min <= max) {
+//   console.log(min);
+//   min += 1;
+// }
