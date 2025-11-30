@@ -160,10 +160,26 @@
 // Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
 // і поверніть її з функції.
 
-function getNumbers(min, max) {
-  for (let index = max; index > min; index--) {
-    console.log(index);
-  }
-}
+// function getNumbers(min, max) {
+//   for (let index = max; index > min; index--) {
+//     console.log(index);
+//   }
+// }
 
-getNumbers(10, 20);
+// getNumbers(10, 20);
+
+// // Завдання 8
+// Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
+// Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
+// повертати з функції рядок - 'Not a number!'.
+
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number" || isNaN(a) || isNaN(b)) {
+//     return "Not a number!";
+//   }
+
+//   return a < b ? a : b;
+// }
+// console.log(min("kk", "oo"));
+// console.log(min(5, 3));
+// console.log(min(5, 13));
