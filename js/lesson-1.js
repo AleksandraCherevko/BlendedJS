@@ -83,16 +83,58 @@
 // Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
 
-function timeCheck() {
-  const inputValue = prompt("enter minutes");
-  const num = Number(inputValue);
+// function timeCheck() {
+//   const inputValue = prompt("enter minutes");
+//   const num = Number(inputValue);
 
-  const hours = Math.floor(num / 60);
-  const minutes = Math.floor(num / 60);
+//   const hours = Math.floor(num / 60);
+//   const minutes = Math.floor(num / 60);
 
-  const formattedHours = String(hours).padStart(2, "0");
-  const formattedMinutes = String(minutes).padStart(2, "0");
+//   const formattedHours = String(hours).padStart(2, "0");
+//   const formattedMinutes = String(minutes).padStart(2, "0");
 
-  console.log(`${formattedHours}:${formattedMinutes}`);
+//   console.log(`${formattedHours}:${formattedMinutes}`);
+// }
+// timeCheck();
+
+// Завдання 5
+
+// Напишіть код, який запитуватиме у користувача
+// логін за допомогою prompt і виводить результат в консоль браузера
+
+// Після цього додайте перевірку введеного користувачем значення:
+// Якщо відвідувач вводить "Адмін",
+// то prompt запитує пароль (не забудьте зберігти його у змінну для подальшої перевірки).
+// Якщо нічого не ввели або натиснули Cancel,
+// Вивести в alert строку "Скасовано"
+// В іншому випадку вивести в alert рядок "Я вас не знаю"
+
+// Пароль перевіряти так:
+// Якщо введено пароль "Я головний",
+// то вивести в alert рядок "Добрий день!",
+// в іншому випадку вивести в alert рядок "Невірний пароль!"
+
+function userLoggin() {
+  const login = prompt("Enter your login");
+
+  if (login === null || login === "") {
+    alert("Скасовано");
+    return;
+  }
+
+  if (login === "Адмін") {
+    const password = prompt("Enter your password");
+
+    if (password === null || password === "") {
+      alert("Скасовано");
+    } else if (password === "Я головний") {
+      console.log("Вітаю!");
+    } else {
+      alert("Невірний пароль");
+    }
+  } else {
+    alert("Я вас не знаю");
+  }
 }
-timeCheck();
+
+userLoggin();
