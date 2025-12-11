@@ -30,7 +30,7 @@
 // Якщо ім'я є в масиві – виводить повідомлення через alert: "Welcome, <name>!"
 // Якщо ім'я відсутнє – виводить повідомлення: "User not found".
 
-const logins = ["Peter", "John", "Igor", "Sasha"];
+// const logins = ["Peter", "John", "Igor", "Sasha"];
 
 // function checkLogin(array) {
 //   const name = prompt("Enter your name");
@@ -44,15 +44,72 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 
 // checkLogin(logins);
 
-function checkLogin(array) {
-  const name = prompt("Enter your name");
-  for (const login of array) {
-    if (login === name) {
-      alert(`Welcome, ${name}!`);
-      return;
-    }
-  }
-  alert("User not found");
-}
+// function checkLogin(array) {
+//   const name = prompt("Enter your name");
+//   for (const login of array) {
+//     if (login === name) {
+//       alert(`Welcome, ${name}!`);
+//       return;
+//     }
+//   }
+//   alert("User not found");
+// }
 
-checkLogin(logins);
+// checkLogin(logins);
+
+// Напишіть функцію caclculateAverage(),
+// яка приймає довільну кількість
+// аргументів і повертає їхнє середнє значення.
+// Додайте перевірку, що аргументи - це числа.
+
+// function caclculateAverage() {
+//   let total = 0;
+//   let count = 0;
+//   for (const arg of arguments) {
+//     if (typeof arg === "number" && !isNaN(arg)) {
+//       total += arg;
+//       count++;
+//     }
+//   }
+//   return count > 0 ? total / count : 0;
+// }
+
+// console.log(caclculateAverage(1, 2, 3, 4, 5));
+
+// Напишіть функцію, яка сумуватиме сусідні числа
+// і пушитиме їх в новий масив.
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// уточнення: складати необхідно перше число з другим, потім друге - з третім,
+// третє - з четвертим і так до кінця.
+// В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
+
+// function arrSum(array) {
+//   const newArr = [];
+//   for (let i = 0; i < array.length - 1; i++) {
+//     newArr.push(array[i] + array[i + 1]);
+//   }
+//   return newArr;
+// }
+// console.log(arrSum(someArr)); // [33, 45, 39, 17, 25, 27, 29].
+
+// Напишіть функцію findSmallestNumber(numbers),
+// яка шукає найменше число в масиві.
+// Додайте перевірку, що функція отримує саме масив, і
+// якщо функція отримує масив - поверніть з функції найменше число,
+// в іншому випадку - поверніть 'Sory, it is not an array!'.
+
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+// const numbers = "2,4,5";
+
+// function findSmallestNumber(numbers) {
+//   for (const number of numbers) {
+//     if (!Array.isArray(numbers)) {
+//       return "Sorry, it's not an array";
+//     }
+//   }
+//   return Math.min(...numbers);
+// }
+// console.log(findSmallestNumber(numbers));
