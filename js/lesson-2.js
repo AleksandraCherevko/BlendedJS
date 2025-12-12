@@ -113,3 +113,50 @@
 //   return Math.min(...numbers);
 // }
 // console.log(findSmallestNumber(numbers));
+
+// Напишіть функцію findLongestWord(string), яка
+// приймає довільний рядок, що складається лише зі слів, розділених
+// пробілами (параметр string), і повертатиме найдовше слово у реченні.
+
+// Скористайтесь цим прикладом виклику функції для перевірки її роботи:
+// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+// function findLongestWord(string) {
+//   const word = string.split(" ");
+//   word.sort((a, b) => a.length - b.length);
+//   return word[0];
+// }
+
+// console.log(findLongestWord("London is the capital of Great Britain"));
+
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуя Object.keys() та for...of
+
+const user = {
+  name: "John",
+  age: 20,
+  hobby: "tenis",
+  premium: true,
+};
+
+console.log(user);
+
+user.mood = "happy";
+console.log(user);
+
+user.hobby = "skydiving";
+console.log(user);
+
+user.premium = false;
+console.log(user);
+
+const keys = Object.keys(user);
+const values = Object.values(user);
+
+for (const key of keys) {
+  console.log(`${[key]} : ${user[key]}`);
+}
