@@ -175,24 +175,94 @@
 // збережіть його результат в змінній sum.
 // Якщо об'єкт salaries пустий, то результат має бути 0
 
-const salaries = {
-  Mango: 100,
-  Poly: 160,
-  Ajax: 1470,
-};
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
 
-function totalSalary(salaries) {
-  let sum = 0;
+// function totalSalary(salaries) {
+//   let sum = 0;
 
-  if (Object.keys(salaries).length === 0) {
-    return 0;
-  }
+//   if (Object.keys(salaries).length === 0) {
+//     return 0;
+//   }
 
-  for (const key in salaries) {
-    sum += salaries[key];
-  }
+//   for (const key in salaries) {
+//     sum += salaries[key];
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(totalSalary(salaries));
+// console.log(totalSalary(salaries));
+
+// Завдання 9:
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+
+//   exist() {
+//     return this.hasOwnProperty("a") && this.hasOwnProperty("b");
+//   },
+
+//   sum() {
+//     if (!this.exist()) {
+//       return "No such propeties";
+//     }
+//     return this.a + this.b;
+//   },
+
+//   mult() {
+//     if (!this.exist()) {
+//       return "No such propeties";
+//     }
+//     return this.a * this.b;
+//   },
+// };
+
+// console.log(calculator.sum());
+// calculator.read(3, 4);
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+// Напишіть функцію calcTotalPrice(fruits, fruitName),
+// яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
+// Функція рахує і повертає загальну вартість фрукта
+// з таким ім'ям, ціною та кількістю з об'єкта.
+
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою
+// назвою фрукта, це також треба урахувати.
+
+// const fruits = [
+//   { name: "Яблуко", price: 45, quantity: 7 },
+//   { name: "Апельсин", price: 60, quantity: 4 },
+//   { name: "Банан", price: 125, quantity: 8 },
+//   { name: "Груша", price: 350, quantity: 2 },
+//   { name: "Виноград", price: 440, quantity: 3 },
+//   { name: "Банан", price: 125, quantity: 3 },
+// ];
+
+// function calcTotalPrice(fruits, fruitName) {
+//   let total = 0;
+//   for (const fruit of fruits) {
+//     if (fruit.name === fruitName) {
+//       total += fruit.price * fruit.quantity;
+//     }
+//   }
+//   return total;
+// }
+
+// console.log(calcTotalPrice(fruits, "Банан"));
