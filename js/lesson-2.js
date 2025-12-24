@@ -238,6 +238,8 @@
 // console.log(calculator.sum());
 // console.log(calculator.mult());
 
+
+// Завдання 10:
 // Напишіть функцію calcTotalPrice(fruits, fruitName),
 // яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
 // Функція рахує і повертає загальну вартість фрукта
@@ -257,12 +259,16 @@
 
 // function calcTotalPrice(fruits, fruitName) {
 //   let total = 0;
+
 //   for (const fruit of fruits) {
 //     if (fruit.name === fruitName) {
 //       total += fruit.price * fruit.quantity;
 //     }
 //   }
+
 //   return total;
 // }
 
-// console.log(calcTotalPrice(fruits, "Банан"));
+// console.log(calcTotalPrice(fruits, "Яблуко")); // 315
+// console.log(calcTotalPrice(fruits, "Виноград")); // 1320
+// console.log(calcTotalPrice(fruits, "Банан")); // 1375
