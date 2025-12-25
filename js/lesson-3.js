@@ -133,17 +133,54 @@
 // Повертає сам об'єкт (this) для підтримки ланцюжкових викликів.
 // - метод multiply -Множить поточне значення на value. Повертає this.
 // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
-// Приклад використання:
-class Calculator {}
 
-const calc = new Calculator();
+// class Calculator {
+//   constructor() {
+//     this.value = 0;
+//   }
 
-const result = calc
-  .number(10) // Встановлюємо початкове значення 10
-  .add(5) // Додаємо 5 (10 + 5 = 15)
-  .subtract(3) // Віднімаємо 3 (15 - 3 = 12)
-  .multiply(4) // Множимо на 4 (12 * 4 = 48)
-  .divide(2) // Ділимо на 2 (48 / 2 = 24)
-  .getResult(); // Отримуємо результат: 24
+//   number(value) {
+//     this.value = value;
+//     return this;
+//   }
 
-console.log(result); // 24
+//   add(value) {
+//     this.value += value;
+//     return this;
+//   }
+
+//   subtract(value) {
+//     this.value -= value;
+//     return this;
+//   }
+
+//   multiply(value) {
+//     this.value *= value;
+//     return this;
+//   }
+
+//   divide(value) {
+//     if (value === 0) {
+//       throw new Error("Ділення на 0 неможливе");
+//     }
+//     this.value /= value;
+//     return this;
+//   }
+
+//   getResult() {
+//     return this.value;
+//   }
+// }
+
+
+// const calc = new Calculator();
+
+// const result = calc
+//   .number(10) // Встановлюємо початкове значення 10
+//   .add(5) // Додаємо 5 (10 + 5 = 15)
+//   .subtract(3) // Віднімаємо 3 (15 - 3 = 12)
+//   .multiply(4) // Множимо на 4 (12 * 4 = 48)
+//   .divide(2) // Ділимо на 2 (48 / 2 = 24)
+//   .getResult(); // Отримуємо результат: 24
+
+// console.log(result); // 24
