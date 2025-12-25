@@ -172,7 +172,6 @@
 //   }
 // }
 
-
 // const calc = new Calculator();
 
 // const result = calc
@@ -184,3 +183,44 @@
 //   .getResult(); // Отримуємо результат: 24
 
 // console.log(result); // 24
+
+// Завдання 12:
+// Напиши клас Client який створює об'єкт з властивостями login email.
+// Оголоси приватні властивості #login #email, доступ до яких зроби
+// через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(params) {
+    this.#login = params.login;
+    this.#email = params.email;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    if (newEmail === "") {
+      console.log("Error!");
+      return;
+    }
+
+    this.#email = newEmail;
+  }
+
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    if (newLogin === "") {
+      console.log("Error!");
+      return;
+    }
+
+    this.#login = newLogin;
+  }
+}
