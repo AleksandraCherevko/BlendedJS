@@ -31,15 +31,15 @@ console.log(list);
 const items = document.querySelectorAll("li");
 console.log(items);
 
-const dataTopic = document.querySelectorAll("li[data-topic]");
+const dataTopic = document.querySelectorAll("[data-topic]");
 console.log(dataTopic);
 
 const firstDataTopicEl = document.querySelector("li[data-topic]");
 console.log(firstDataTopicEl);
 
-const lastDataTopicEl = document.querySelector("li:last-child[data-topic]");
+const lastDataTopicEl = dataTopic[dataTopic.length - 1];
 console.log(lastDataTopicEl);
-
+const titles = document.querySelectorAll("h3");
 const mainTitle = document.querySelector("#title");
 console.log(mainTitle.textContent);
 
@@ -56,3 +56,48 @@ console.log(thirdTitleEl);
 
 const navEl = document.querySelector('li[data-topic="navigation"]');
 console.log(navEl.dataset.topic);
+
+navEl.setAttribute("style", "backgroundColor");
+console.log(navEl.getAttribute("style"));
+
+navEl.style.backgroundColor = "yellow";
+
+const navText = navEl.querySelector("p");
+navText.textContent = "Я змінив тут текст!";
+
+const currentTopic = "manipulation";
+const newEl = document.querySelector(`[data-topic='${currentTopic}']`);
+console.log(newEl);
+
+newEl.style.backgroundColor = "lightblue";
+
+const completedTitle = document.querySelector(".completed");
+console.log(completedTitle);
+
+completedTitle.closest("li").remove();
+
+const newTextEl = document.createElement("p");
+newTextEl.textContent = "Об'єктна модель документа (Document Object Model)";
+mainTitle.append(newTextEl);
+
+const newTitle = document.createElement("h3");
+const newText = document.createElement("p");
+const newItem = document.createElement("li");
+newTitle.textContent = "Властивість innerHTML";
+newText.textContent =
+  "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу";
+list.append(newItem);
+newItem.prepend(newTitle, newText);
+
+const markup = `
+  <li>
+    <h3>Властивість innerHTML</h3>
+    <p>
+      Ще один спосіб створити DOM-елементи і помістити їх в дерево —
+      це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу
+    </p>
+  </li>
+`;
+
+list.insertAdjacentHTML("beforeend", markup);
+list.innerHTML = "";
