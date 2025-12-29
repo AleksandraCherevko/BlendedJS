@@ -141,12 +141,21 @@ container.appendChild(numContainer);
 // 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
 // то клас `error`
 
+// Також при події інпут реалізуй додавання
+// ім`я користувача у span, замість слова "Anonymous".
+// Якщо користувач ввів ім`я, а потім видалив, зроби так,
+// щоб на місце повернулось дефолтне знаяення "Anonymous".
+// При відправці форми, очисти інпут, верни чек бокс у положення
+// false, верни дефолтне значення "Anonymous" у span.
+
 const form = document.querySelector("form");
 
 const textInput = document.querySelector(".contact-form-input");
+const output = document.querySelector(".js-username-output");
 
 textInput.addEventListener("input", (event) => {
-  const nameInput = event.currentTarget.value;
+  const nameInput = event.currentTarget.value.trim();
+  output.textContent = nameInput === "" ? "Anonymous" : nameInput;
   if (nameInput.length < 6) {
     textInput.classList.add("error");
     textInput.classList.remove("success");
@@ -164,15 +173,25 @@ textInput.addEventListener("focus", (event) => {
   const value = event.currentTarget.value.trim();
 
   if (value === "") {
-    textInput.style.outline = "3px solid red";
+    textInput.style.outline = "3px solid lightblue";
   } else {
-    textInput.style.outline = "3px solid green";
+    textInput.style.outline = "3px solid yellow";
   }
 });
 
 // 3 - При події `blur` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
 // якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
+
+textInput.addEventListener("blur", (event) => {
+  const value = event.currentTarget.value.trim();
+
+  if (value === "") {
+    textInput.style.outline = "3px solid coral";
+  } else {
+    textInput.style.outline = "3px solid lime";
+  }
+});
 
 // 4 - При події `submit`. Відміни поведінку браузера по змовчуванню.
 // Дістань данні з інпуту і чек боксу, зроби перевірку,
@@ -185,3 +204,24 @@ textInput.addEventListener("focus", (event) => {
 // щоб на місце повернулось дефолтне знаяення "Anonymous".
 // При відправці форми, очисти інпут, верни чек бокс у положення
 // false, верни дефолтне значення "Anonymous" у span.
+
+const checkBox = document.querySelector(".contact-form-checkbox");
+const anonymus = document.querySelector(".js-username-output");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const userName = form.elements.userName.value.trim();
+  const checkbox = form.elements.accept.checked;
+
+  if (userName === "" || !checkbox) {
+    console.log("Error!");
+    return;
+  }
+  const data = { userName };
+  console.log(data);
+
+  form.reset();
+  output.textContent = "Anonymous";
+  textInput.classList.remove("success", "error");
+});
