@@ -100,7 +100,7 @@ const markup = `
 `;
 
 list.insertAdjacentHTML("beforeend", markup);
-list.innerHTML = "";
+// list.innerHTML = "";
 
 // Створіть контейнер div (з класом number-container) в HTML-документі
 // та динамічно створіть 100 блоків (з класом number) наповнивши їх рандомними
@@ -144,6 +144,7 @@ container.appendChild(numContainer);
 const form = document.querySelector("form");
 
 const textInput = document.querySelector(".contact-form-input");
+
 textInput.addEventListener("input", (event) => {
   const nameInput = event.currentTarget.value;
   if (nameInput.length < 6) {
@@ -158,6 +159,16 @@ textInput.addEventListener("input", (event) => {
 // 2 - При події `focus` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
 // якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
+
+textInput.addEventListener("focus", (event) => {
+  const value = event.currentTarget.value.trim();
+
+  if (value === "") {
+    textInput.style.outline = "3px solid red";
+  } else {
+    textInput.style.outline = "3px solid green";
+  }
+});
 
 // 3 - При події `blur` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
