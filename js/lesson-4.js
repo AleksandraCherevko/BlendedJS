@@ -225,3 +225,25 @@ form.addEventListener("submit", (event) => {
   output.textContent = "Anonymous";
   textInput.classList.remove("success", "error");
 });
+
+// Використовуй шаблон розмітки з файлу html та напиши наступний функціонал:
+// При кліку на кнопку "Зменшити" квадрат стає меньшим на 20 пікселів,
+// При кліку на кнопку "Збільшити" - квадрат стає більшим на 20 пікселів.
+
+const decreaseBtn = document.querySelector("#decrease");
+const increase = document.querySelector("#increase");
+const box = document.querySelector(".box");
+
+let size = 50;
+
+increase.addEventListener("click", () => {
+  size += 20;
+  box.style.width = `${size}px`;
+  box.style.height = `${size}px`;
+});
+
+decreaseBtn.addEventListener("click", () => {
+  size -= 20;
+  box.style.width = `${size}px`;
+  box.style.height = `${size}px`;
+});
