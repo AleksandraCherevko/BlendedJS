@@ -91,11 +91,24 @@ gallery.addEventListener("click", (event) => {
   }
 
   const largeImageURL = event.target.dataset.source;
-  console.log(largeImageURL);
+  const description = event.target.alt;
 
   const instance = basicLightbox.create(`
-    <img src="${largeImageURL}" width="800" height="600">
+   <div class="modal">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+       <div class="image-wrapper">
+      <img src="${largeImageURL}" alt="${description}">
+      <div class="image-caption">${description}</div>
+    </div>
+   </div>
 `);
+
+  instance
+    .element()
+    .querySelector(".modal-close")
+    .addEventListener("click", () => {
+      instance.close();
+    });
 
   instance.show();
 });
