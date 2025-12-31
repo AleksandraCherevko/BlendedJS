@@ -12,3 +12,41 @@
   height: auto;
   display: block;
 }
+
+.modal {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: -200px;
+  background: transparent;
+  border: 1px solid white;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.image-wrapper {
+  position: relative;
+  max-width: 800px;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
